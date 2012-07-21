@@ -2,7 +2,7 @@ Browserbump::Application.routes.draw do
 
   match "/auth/:provider/callback" => "sessions#create"
   match "/logout" => "sessions#destroy", :as => :logout
-  
+  match "/test" => "bump#index"  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
