@@ -1,0 +1,23 @@
+#landing
+  #title.row
+    %h1.centered
+      HighFive
+
+  #info.row
+    .step
+      .number
+        1
+      %p Login
+    .step
+      .number
+        2
+      %p Confirm your contact info
+    .step
+      .number
+        3
+      %p 
+        Share it with others 
+        in 1-click
+
+  .login-container
+    = link_to image_tag( 'login-facebook-btn.png', :class => 'fb-login'), "/auth/facebook"
