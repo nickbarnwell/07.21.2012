@@ -1,2 +1,5 @@
-07.21.2012
-==========
+Creating the DB
+---
+$ createuser bump "should be superuser
+$ rake db:create
+
