@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
    :allow_nil => true
   )
   validates :uid, :uniqueness => {:scope => :provider}, :on => :create
-  validates :short_url, :uniqueness => true
   validates_format_of :uid, :with => /\d+/, :on => :create
 
   validates :provider, :inclusion => {:in => %w(facebook)}
@@ -51,8 +50,7 @@ class User < ActiveRecord::Base
         user.raw = auth["extra"]["raw_info"]
         user.access_token = auth["credentials"]["token"]
         user.token_expiration = auth["credentials"]["expires_at"]
-        user.short_url = user.uid
-
+       
         begin
           user.email = auth["info"]["email"]
         end
