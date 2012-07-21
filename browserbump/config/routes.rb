@@ -4,6 +4,7 @@ Browserbump::Application.routes.draw do
   match "/logout" => "sessions#destroy", :as => :logout
   match "/bump" => "bump#index"  
   match "/test" => "bump#fake"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
