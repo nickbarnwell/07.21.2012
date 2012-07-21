@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user, :logged_in?
 
+
   def page_title(text)
     content_tag(:h1, content_for(:title){ text })
   end
