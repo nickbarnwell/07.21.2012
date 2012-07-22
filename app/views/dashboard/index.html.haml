@@ -1,0 +1,17 @@
+#card.page-curl.curl
+  .top
+    .photo
+      = image_tag("https://graph.facebook.com/#{@user.uid}/picture?type=square", :class => 'profile-photo')
+    .header
+      %h1.name
+        =@user.first_name
+      %h1
+        =@user.last_name
+  .bottom.shadow-bottom
+    %dl
+      %dt Email
+      %dd nick.barnwell@gmail.com
+      %dt Phone
+      %dd 978-558-0203
+
+
