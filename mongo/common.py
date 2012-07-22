@@ -13,7 +13,7 @@ MAX_CLUSTERS = 10
 
 def connect_db():
 	port = 'localhost:27017'
-	env = os.getenv('ENV')
+	env = os.getenv('RACK_ENV')
 	if env == 'production':
 		port = os.getenv('MONGOLAB_URI')
 	connect('handsin', host = port, auto_start_request = False)

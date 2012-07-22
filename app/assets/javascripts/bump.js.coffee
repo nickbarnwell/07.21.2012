@@ -1,6 +1,6 @@
 $(document).ready -> 
     
-  get_location()
+  #get_location()
   return
 
 get_location = ->
