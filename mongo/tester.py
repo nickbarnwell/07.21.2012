@@ -8,6 +8,8 @@ import time
 import get_group
 import save_event
 from mongoengine import connect
+from Event import Event
+
 
 #test data
 t1 = int(time.time())
@@ -26,36 +28,36 @@ e1 = { "timestamp" : t1,
 		"uid" : '1111'
 	}
 e2 = { "timestamp" : t1 - c.TIME_DIFF_THRESHOLD / 2,
-		"lat" : lat1 - c.GEO_DIFF_THRESHOLD / 400,
-		"lon" : lon1 - c.GEO_DIFF_THRESHOLD / 4,
+		"lat" : lat1 - c.RADIUS_THRESHOLD / 400,
+		"lon" : lon1 - c.RADIUS_THRESHOLD / 4,
 		"uid" : '2222'
 	}
 e3 = { "timestamp" : t1 - c.TIME_DIFF_THRESHOLD / 4,
-		"lat" : lat1 + c.GEO_DIFF_THRESHOLD / 400,
-		"lon" : lon1 - c.GEO_DIFF_THRESHOLD / 400,
+		"lat" : lat1 + c.RADIUS_THRESHOLD / 400,
+		"lon" : lon1 - c.RADIUS_THRESHOLD / 400,
 		"uid" : '3333'
 	}
 e4 = { "timestamp" : t1 + c.TIME_DIFF_THRESHOLD / 4,
-		"lat" : lat1 + c.GEO_DIFF_THRESHOLD / 400,
-		"lon" : lon1 - c.GEO_DIFF_THRESHOLD / 400,
+		"lat" : lat1 + c.RADIUS_THRESHOLD / 400,
+		"lon" : lon1 - c.RADIUS_THRESHOLD / 400,
 		"uid" : '4444'
 	}
 #geo outlier, but in range
 e5 = { "timestamp" : t1 + c.TIME_DIFF_THRESHOLD / 2,
-		"lat" : lat1 + c.GEO_DIFF_THRESHOLD / 4,
-		"lon" : lon1 + c.GEO_DIFF_THRESHOLD / 4,
+		"lat" : lat1 + c.RADIUS_THRESHOLD / 4,
+		"lon" : lon1 + c.RADIUS_THRESHOLD / 4,
 		"uid" : '5555'
 	}
 #too late
 e6 = { "timestamp" : t1 + c.TIME_DIFF_THRESHOLD * 2,
-		"lat" : lat1 + c.GEO_DIFF_THRESHOLD / 4,
-		"lon" : lon1 + c.GEO_DIFF_THRESHOLD / 4,
+		"lat" : lat1 + c.RADIUS_THRESHOLD / 4,
+		"lon" : lon1 + c.RADIUS_THRESHOLD / 4,
 		"uid" : '6666'
 	}
 #out of geo range (using circular radius)
 e7 = { "timestamp" : t1 + c.TIME_DIFF_THRESHOLD / 2,
-		"lat" : lat1 + c.GEO_DIFF_THRESHOLD,
-		"lon" : lon1 + c.GEO_DIFF_THRESHOLD,
+		"lat" : lat1 + c.RADIUS_THRESHOLD,
+		"lon" : lon1 + c.RADIUS_THRESHOLD,
 		"uid" : '7777'
 	}
 
@@ -76,11 +78,12 @@ class MainTest(unittest.TestCase):
 			except for the duplicate. '''
 		self.assertEqual(MainTest.count_events(), len(test_events) - 1)
 
-	def test_group_cluster(self):
-		''' Checks that the grouping and clustering works '''
+'''
+	def test_group(self):
 		group = get_group.main(e1['uid'])
 		#two of them are out of range for grouping
 		self.assertEqual(len(group), len(test_events) - 3)
+'''
 
 if __name__ == '__main__':
 	unittest.main()

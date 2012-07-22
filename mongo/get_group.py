@@ -2,6 +2,7 @@ import sys
 import common as c
 import json
 import math
+from Event import Event
 
 def main(uid):
 	Event.get_group(uid)

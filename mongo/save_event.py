@@ -1,6 +1,8 @@
 import sys
 import common as c
 import json
+from Event import Event
+
 
 def main(json_event):
 	d = json.loads(json_event)
@@ -8,7 +10,7 @@ def main(json_event):
 	lat = d['lat']
 	lon = d['lon']
 	timestamp = d['timestamp']
-	Event.add(uid, lat, lon, timestamp):
+	Event.add(uid, lat, lon, timestamp)
 
 if __name__ == '__main__':
 	if len(sys.argv) == 2:
