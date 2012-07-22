@@ -1,6 +1,6 @@
 class ShareField < ActiveRecord::Base
   include ShareFieldTypes
-  validates :type, inclusion: {in: TYPES}
+  validates :field_type, inclusion: {in: TYPES}
   belongs_to :user
   
   def disable!

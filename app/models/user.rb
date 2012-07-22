@@ -43,9 +43,9 @@ class User < ActiveRecord::Base
     token_expiration.nil? || token_expiration < 5.days.from_now
   end
 
-  def add_field(type, value)
+  def add_field(field_type, value)
     ShareField.create! do |field|
-      field.type = type
+      field.field_type = field_type
       field.value = value
       field.share = true
       field.user = self

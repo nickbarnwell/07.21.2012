@@ -11,6 +11,6 @@ module ShareFieldTypes
   ]
 
   def icon
-    return type+'.png'
+    return field_type+'.png'
   end
 end
