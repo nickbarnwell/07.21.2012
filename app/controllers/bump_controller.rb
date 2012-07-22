@@ -1,8 +1,8 @@
 class BumpController < ApplicationController
 
   def bump
-    p params
-    render :status => 200, :json=>%x[python mongo/save_event.py '#{dict}']
+    params.merge!({uid: current_user.uid})
+    render :status => 200, :json=>%x[python mongo/save_event.py '#{params}']
   end
 
   def hump
