@@ -2,10 +2,10 @@
  * modified svbtle kudos
  */
 
-@size: 100px;
+@size: 210px;
 
 .presser {
-	margin-top:0px;
+	margin: 14px auto;
 	width: @size;
 	height: @size;
 	position: relative;
@@ -15,6 +15,10 @@
 	-ms-user-select:none;
 	-webkit-touch-callout: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+ 
+  border: solid 20px #00558E;
+  border-radius: 25px;
+
 }
 
 .presser img {
@@ -39,11 +43,12 @@
 }
 
 .presser.active > div{
-	width: @size + 2px;
-	height: @size + 2px;
-	margin-left: -(@size + 2px)/2;
-	margin-top: -(@size + 2px)/2;
-	border-radius: (@size + 2px)/2;
-	-webkit-border-radius: (@size + 2px)/2;
-	-moz-border-radius: (@size + 2px)/2;
+	@circleSize: 6px;
+	width: @size + @circleSize;
+	height: @size + @circleSize;
+	margin-left: -(@size + @circleSize)/2;
+	margin-top: -(@size + @circleSize)/2;
+	border-radius: (@size + @circleSize)/2;
+	-webkit-border-radius: (@size + @circleSize)/2;
+	-moz-border-radius: (@size + @circleSize)/2;
 }
