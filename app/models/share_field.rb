@@ -31,4 +31,28 @@ class ShareField < ActiveRecord::Base
     end
 
   end
+
+  class << self
+    def humanize(field_type)
+      case field_type
+      when 'mail-work'
+       return 'Work Email'
+      when 'mail-personal'
+       return 'Personal Email'
+      when 'tel-mobile'
+       return 'Mobile Phone'
+      when 'tel-work'
+        return'Work Phone'
+      when 'tel-home'
+        return'Home Phone'
+      when 'twitter'
+        return'Twitter'
+      when 'facebook'
+        return'Facebook'
+      when 'linkedin'
+        return'LinkedIn'
+      end
+    end
+  end
+
 end

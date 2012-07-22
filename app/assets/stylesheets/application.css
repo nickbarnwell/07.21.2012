@@ -23,3 +23,20 @@
 .autocenter {
   margin: 0 auto;
 }
+
+.hidden {
+  display: none;
+}
+
+#matte {
+  background-color: rgba(0,0,0, 0.5);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: inline;
+  content: '-';
+  width: 1000000px;
+  height: 100000px;
+  overflow: hidden;
+  z-index: 1000;
+}

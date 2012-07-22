@@ -10,4 +10,17 @@
     %ul.fields
       - current_user.fields.unshared.each do |field|
         = render :partial => 'shared/card-field', locals: {field: field}
-      
+
+#add-field-form.autocenter.curl.page-curl.hidden
+  %label{for: :thing}
+    Type
+  %select{id: 'add-field-type'}
+    - ShareField::TYPES.each do |type|
+      %option{value: type.gsub(' ','-')}
+        = "#{ShareField.humanize(type.gsub(' ','-'))}"
+  %br
+  %label{for: '#add-field-value'}
+    Value
+  %input#add-field-value
+  #add-field-submit.btn.btn-large.btn-success
+    Add Field

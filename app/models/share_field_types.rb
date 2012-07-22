@@ -13,4 +13,9 @@ module ShareFieldTypes
   def icon
     return field_type+'.png'
   end
+
+  def humanized
+    self.class.humanize(field_type)
+  end
+  
 end
