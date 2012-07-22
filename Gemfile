@@ -11,7 +11,6 @@ gem 'pg'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-gem 'handlebars-rails', git: 'git://github.com/jamesarosen/handlebars-rails.git'
 
 group :test do
   gem 'rspec-rails', '~> 2.10.1'
@@ -37,7 +36,7 @@ group :assets do
   gem 'haml'
   gem 'twitter-bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
