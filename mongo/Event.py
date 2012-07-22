@@ -14,6 +14,9 @@ class Event(Document):
 
 	@staticmethod
 	def add(user_id, lat, lon, timestamp):
+		existing_event = Event.objects(user_id = user_id)
+		if existing_event is not None:
+			existing_event.delete()
 		event = Event(user_id = user_id, loc = [lat, lon], ts = timestamp)
 		print event.loc
 		event.save()
