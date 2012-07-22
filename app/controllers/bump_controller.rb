@@ -19,7 +19,6 @@ class BumpController < ApplicationController
 
   def fake_get
     uid = params[:uid]
-    
     render :status => 200, :text=>%x[python mongo/get_group.py '#{uid}']
   end
 

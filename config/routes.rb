@@ -8,8 +8,14 @@ Browserbump::Application.routes.draw do
   match "/dashboard" => 'dashboard#index', :as => 'dashboard'
   match "/login/fake" => 'sessions#fake_create'
   match "/dev/presser" => "landing#test"
-
-  resource :profile, :controller => 'profile'
+  delete 'field/:id' => 'profile#delete_field', as: 'delete_field'
+  post 'field' => 'profile#add_field', as: 'add_field'
+  resource :profile, :controller => 'profile' do
+    
+    member do
+      
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
