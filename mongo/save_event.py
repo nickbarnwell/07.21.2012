@@ -4,6 +4,7 @@ import json
 from Event import Event
 
 def main(json_event):
+	json_event
 	d = json.loads(json_event)
 	uid = d['uid']
 	lat = d['lat']

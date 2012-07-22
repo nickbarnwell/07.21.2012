@@ -12,7 +12,7 @@ $(document).ready ->
     
     $.post('/field', dict, (res) ->
       console.log(res)
-      $('#card .fields').append(res)
+      $('.bottom > .fields').append(res)
     )
     $("#add-field-form").modal('hide')
     return

@@ -21,7 +21,7 @@ class Event(Document):
     existing_event = Event.objects(user_id = user_id).first()
     if existing_event is not None:
       existing_event.delete()
-    dt = datetime.fromtimestamp(timestamp)
+    dt = datetime.fromtimestamp(float(timestamp))
     event = Event(user_id = user_id, loc = [lat, lon], timestamp = timestamp, time = dt)
     print event.time
     event.save()

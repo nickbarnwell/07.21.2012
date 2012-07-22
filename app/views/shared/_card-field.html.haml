@@ -8,7 +8,7 @@
 
     - case field.field_type
     - when 'twitter'
-      = link_to field.value, "http://twitter.com/#{value}"
+      = link_to field.value, "http://twitter.com/#{field.value}"
     - when 'facebook'
       = link_to field.user.name, "field.user.raw['link']" 
     / end
