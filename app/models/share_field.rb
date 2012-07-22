@@ -2,6 +2,9 @@ class ShareField < ActiveRecord::Base
   include ShareFieldTypes
   validates :field_type, inclusion: {in: TYPES}
   belongs_to :user
+
+  scope :shared, :conditions => {share: true}
+  scope :unshared, :conditions => {share: false}
   
   def disable!
     share = false

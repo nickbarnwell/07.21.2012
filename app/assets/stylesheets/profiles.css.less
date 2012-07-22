@@ -120,3 +120,31 @@
   -o-transform: skew(15deg) rotate(6deg);
   transform: skew(15deg) rotate(6deg); 
 }
+
+#fields {
+  margin-top: 1em;
+  width: 380px;
+
+  #add-field {
+    @green: lighten(green, 20%);
+    @circle: 2em;
+    
+    span.add-icon:before {
+      content: '+' ;
+      border-radius: 50%;
+      text-align: center;
+      width: @circle;
+      height: @circle;
+      background: @green;
+      border: solid 2px white;
+      color: white;
+      margin-right: 1.2em;
+    }
+
+    span.add-icon {
+      color: @green;
+      font-style: italics;
+      font-size: 1.3em;
+    }
+  }
+}

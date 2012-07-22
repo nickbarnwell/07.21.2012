@@ -1,5 +1,13 @@
 =render :partial => 'shared/card', :locals => {user: current_user}
 
-#fields
-  %ul
-  
+.row.span12
+  #fields.autocenter
+    #add-field
+      %span.add-icon
+        Add Field
+
+    %h2 Unshared Fields
+    %ul.fields
+      - current_user.fields.unshared.each do |field|
+        = render :partial => 'shared/card-field', locals: {field: field}
+      

@@ -12,5 +12,5 @@
         =user.last_name
   .bottom.shadow-bottom
     %ul.fields
-      - user.fields.each do |field|
+      - user.fields.shared.each do |field|
         = render :partial => 'shared/card-field', locals: {field: field}
