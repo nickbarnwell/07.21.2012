@@ -17,11 +17,6 @@ lat1 = 37.7991206718683
 lon1 = -122.35498517668354
 
 #duplicate, should just get overwritten by first
-e1_dup = { "timestamp" : t1,
-		"lat" : lat1,
-		"lon" : lon1,
-		"uid" : '1111'
-	}
 e1 = { "timestamp" : t1,
 		"lat" : lat1,
 		"lon" : lon1,
@@ -61,7 +56,7 @@ e7 = { "timestamp" : t1 + c.TIME_DIFF_THRESHOLD / 2,
 		"uid" : '7777'
 	}
 
-test_events = [e1_dup, e1, e2, e3, e4, e5, e6, e7]
+test_events = [e1, e2, e3, e4, e5, e6, e7]
 
 class MainTest(unittest.TestCase):
 
@@ -73,17 +68,14 @@ class MainTest(unittest.TestCase):
 	@staticmethod
 	def count_events(): return Event.objects.count()
 
-	def test_add(self):
+	def test(self):
 		''' Checks that all events were saved in the db
 			except for the duplicate. '''
-		self.assertEqual(MainTest.count_events(), len(test_events) - 1)
-
-'''
-	def test_group(self):
+		self.assertEqual(MainTest.count_events(), len(test_events))
 		group = get_group.main(e1['uid'])
 		#two of them are out of range for grouping
-		self.assertEqual(len(group), len(test_events) - 3)
-'''
+		self.assertEqual(len(group), len(test_events) - 2)
+
 
 if __name__ == '__main__':
 	unittest.main()

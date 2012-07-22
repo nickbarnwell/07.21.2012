@@ -5,7 +5,7 @@ import math
 from Event import Event
 
 def main(uid):
-	Event.get_group(uid)
+	return Event.get_group(uid)
 
 if __name__ == '__main__':
 	if len(sys.argv) == 2:
