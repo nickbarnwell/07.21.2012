@@ -9,7 +9,7 @@ var Dashboard = {
 			});
 		}
 		$(".main").hide();
-		$(".results").show();
+		$(".results").fadeIn(500);
 	},
 	geoFailed: function(){
 		alert("retrieving second geo failed");
