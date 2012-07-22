@@ -4,6 +4,8 @@ class LandingController < ApplicationController
 
   def index
   end
+  def test
+  end
 
   def logged_in_redirect
     if logged_in? then redirect_to dashboard_path end
