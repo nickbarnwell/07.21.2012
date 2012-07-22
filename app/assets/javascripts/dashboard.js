@@ -38,5 +38,10 @@ var Dashboard = {
 		$('.edit').on('click', function(evt) {
 			window.location = '/profile/edit'
 		})
+		$('#results-back').on('click', function(evt) {
+			$('.results').hide();
+			$('.main').fadeIn(500);
+			$('.results .bump-result').remove();
+		})
 	}
 }
