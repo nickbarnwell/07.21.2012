@@ -19,8 +19,12 @@ class SessionsController < ApplicationController
   end
 
   def fake_create
-    user = User.find_by_uid('692938645')
-    p user
+    if params[:user] == '2'
+      user = User.find_by_uid('692938647')
+    else
+      user = User.find_by_uid('692938645')
+    end
+    
     session[:user_id] = user.id
     redirect_to root_url, :notice => "Signed in!"
   end

@@ -2,18 +2,18 @@ toggle_add_field = ->
 
 
 $(document).ready ->
-  toggle_matte = ->
-    $('#matte').toggle('fast')
-    return
-
-  toggle_add_field = ->
-    $('#add-field-form').toggle('fast');
-    return
-
   $('#add-field').on('click', (evt) ->
+    $("#add-field-form").modal()
+    return
+  )
 
-    toggle_matte()
-    toggle_add_field()
-
+  $("#add-field-submit").on("click", (evt) ->
+    dict = { field_type: $('#add-field-type').val(), field_value: $('#add-field-value').val()}
+    
+    $.post('/field', dict, (res) ->
+      console.log(res)
+      $('.bottom > .fields').append(res)
+    )
+    $("#add-field-form").modal('hide')
     return
   )

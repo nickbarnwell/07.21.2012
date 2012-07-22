@@ -1,13 +1,29 @@
 class BumpController < ApplicationController
 
   def bump
-    p params
-    render :status => 200, :json=>%x[python mongo/save_event.py '#{dict}']
+    dict = [:timestamp, :lat, :lon, :acc].inject({}) do |hash, key|
+      hash[key] = params[key].to_f
+      hash
+    end
+    puts current_user.uid
+    dict.merge!({uid: current_user.uid})
+    dict[:timestamp] = dict[:timestamp]/1000
+
+    resp = %x[python mongo/save_event.py '#{dict.to_json}']
+
+    render :status => 200, :nothing => true
   end
 
   def hump
     uid = current_user.uid
-    render :json=>%x[python mongo/get_group.py '#{uid}']
+    ids = %x[python mongo/get_group.py '#{uid}']
+    p ids
+    array = JSON.parse(ids).map do |id|
+      unless id == uid
+        User.find_by_uid(id)
+      end
+    end.to_json
+    render :json=> array
   end
 
   def fake
