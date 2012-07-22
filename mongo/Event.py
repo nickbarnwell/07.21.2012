@@ -31,16 +31,21 @@ class Event(Document):
     e = Event.objects(user_id = user_id).first()
     if e:
       nearby = Event.objects( 
-        __raw__ = { 'loc' : { '$within' : {"$center" : [e.loc, c.RADIUS_THRESHOLD]} },
-              'timestamp' : { '$gt' : e.timestamp - c.TIME_DIFF_THRESHOLD, '$lt' : e.timestamp + c.TIME_DIFF_THRESHOLD }
-            } 
+        __raw__ =  { 'loc' : { '$within' : 
+                                {"$center" : [e.loc, c.RADIUS_THRESHOLD]}
+                              }
+                  } 
       ).limit(c.MAX_GROUP_SIZE).all()
+      in_time_range = lambda e2 : abs(e.timestamp - e2.timestamp) < c.TIME_DIFF_THRESHOLD
+      nearby = filter(in_time_range, nearby)
       return json.dumps([e.user_id for e in nearby], ensure_ascii=True).decode('ascii')
     return json.dumps([]).decode('ascii')
 
-    @staticmethod
-    def get_cluster(user_id):
-      nearby = Event.get_group(user_id)
-      group = [ (e.user_id, e.loc) for e in nearby]
-      cl = cluster.get_cluster(group)
-      return json.dumps([uid for (uid, loc) in cl])
+  @staticmethod
+  def get_cluster(user_id):
+    nearby = json.loads(Event.get_group(user_id))
+    events = [Event.objects(user_id = user_id).first() for user_id in nearby]
+    locs = [e.loc for e in events]
+    group = zip(nearby, locs)
+    cl = cluster.get_cluster(group)
+    return json.dumps([uid for (uid, loc) in cl])
