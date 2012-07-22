@@ -6,6 +6,7 @@ Browserbump::Application.routes.draw do
   match "/test" => "bump#fake"
   match "/dashboard" => 'dashboard#index', :as => 'dashboard'
   match "/login/fake" => 'sessions#fake_create'
+  match "/dev/presser" => "landing#test"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
