@@ -2,7 +2,7 @@ from mongoengine import *
 import common as c
 from datetime import datetime
 import time
-
+import json
 
 class Event(Document):
 
@@ -37,5 +37,5 @@ class Event(Document):
             } 
       ).limit(c.MAX_GROUP_SIZE).all()
       print [e.user_id for e in nearby]
-      return [e.user_id for e in nearby]
+      return json.dumps([e.user_id for e in nearby])
     #maybe cluster / remove outliers here later
