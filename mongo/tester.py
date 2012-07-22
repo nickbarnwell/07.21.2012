@@ -72,57 +72,15 @@ class MainTest(unittest.TestCase):
 	def count_events(): return Event.objects.count()
 
 	def test_add(self):
-		''' Checks that all events were saved in the file
+		''' Checks that all events were saved in the db
 			except for the duplicate. '''
 		self.assertEqual(MainTest.count_events(), len(test_events) - 1)
 
 	def test_group_cluster(self):
 		''' Checks that the grouping and clustering works '''
-		group, cluster = get_group.main(e1['uid'])
+		group = get_group.main(e1['uid'])
 		#two of them are out of range for grouping
 		self.assertEqual(len(group), len(test_events) - 3)
-		#one more of them is out of range for clustering
-		self.assertEqual(len(cluster), len(test_events) - 4)
-
-	def test_timeout(self):
-		''' Checks that events are deleted from the file after
-			the timeout time '''
-		old_timeout = c.DELETE_USER_TIMEOUT
-
-		c.DELETE_USER_TIMEOUT = 3
-		timestamps = [e['timestamp'] for e in test_events]
-		latest = max(timestamps)
-		while time.time() - latest < c.DELETE_USER_TIMEOUT:
-			pass
-		self.assertEqual(MainTest.count_events(), 0)
-
-		c.DELETE_USER_TIMEOUT = old_timeout
 
 if __name__ == '__main__':
 	unittest.main()
-
-
-'''
-#setup
-sub.call(['rm', '-rf', c.DATA_FILE])
-uids = []
-
-
-#test adds
-for i in range(15):
-	js = urllib.urlopen('http://192.168.0.250:3000/test').read()
-	print js
-	d = json.loads(js)
-	uids.append(d['uid'])
-	sub.call(['python', 'save_event.py', js])
-
-#sub.call(['cat', c.DATA_FILE])
-
-#test queries
-from urlparse import urlparse, parse_qs
-
-for uid in uids:
-	url = 'http://192.168.0.250/?uid=' + str(uid)
-	query = parse_qs(urlparse(url).query)
-	uid = query['uid'][0]
-'''
