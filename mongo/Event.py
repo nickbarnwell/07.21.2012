@@ -39,9 +39,11 @@ class Event(Document):
       return json.dumps([e.user_id for e in nearby], ensure_ascii=True).decode('ascii')
     return json.dumps([]).decode('ascii')
 
-    @staticmethod
-    def get_cluster(user_id):
-      nearby = Event.get_group(user_id)
-      group = [ (e.user_id, e.loc) for e in nearby]
-      cl = cluster.get_cluster(group)
-      return json.dumps([uid for (uid, loc) in cl])
+  @staticmethod
+  def get_cluster(user_id):
+    nearby = json.loads(Event.get_group(user_id))
+    events = [Event.objects(user_id = user_id).first() for user_id in nearby]
+    locs = [e.loc for e in events]
+    group = zip(nearby, locs)
+    cl = cluster.get_cluster(group)
+    return json.dumps([uid for (uid, loc) in cl])
