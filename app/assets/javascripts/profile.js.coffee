@@ -24,7 +24,7 @@ $(document).ready ->
     return
   )
 
-  $('i.icon-remove-sign').live('click', (evt) ->
+  $('i.icon-remove-sign').live('click mouseup', (evt) ->
     field = $(this).parent()
     $.ajax(url: '/field/'+field.attr('data-id'), type: 'delete', success: (data) ->
       field.fadeOut(300, -> remove())
