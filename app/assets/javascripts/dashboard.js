@@ -1,6 +1,7 @@
 var Dashboard = {
 	loadResults: function(users){
-		if(users){
+		console.log(users)
+		if(users != null){
 			$.each(users, function(i,user){
 				$(".results").append(Card.build(user));
 			});
@@ -18,7 +19,7 @@ var Dashboard = {
 		Geo.getLocation(Dashboard.submitGeo, Dashboard.geoFailed)
 	},
 	onPressFinish: function(){
-		$.getJSON('/hump', Dashboard.loadResults);
+		$.getJSON('/hump', Dashboard.loadResults)
 	},
 	initWithGeo: function(){
 		Dashboard.presser = 

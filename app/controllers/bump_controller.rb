@@ -17,7 +17,7 @@ class BumpController < ApplicationController
   def hump
     uid = current_user.uid
     ids = %x[python mongo/get_group.py '#{uid}']
-    
+    p ids
     array = JSON.parse(ids).map do |id|
       unless id == uid
         User.find_by_uid(id)
