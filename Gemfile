@@ -12,6 +12,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 
+gem 'haml'
 group :test do
   gem 'rspec-rails', '~> 2.10.1'
   gem 'webmock'
@@ -33,7 +34,6 @@ group :assets do
   gem 'less', '~> 2.2'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'jquery-rails'
-  gem 'haml'
   gem 'twitter-bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
