@@ -1,23 +1,25 @@
 #landing
   #title.row
     %h1.centered
-      HighFive
+      =image_tag 'logo.png'
 
   #info.row
     .step
       .number
         1
-      %p Login
+      %p Confirm your contact info
     .step
       .number
         2
-      %p Confirm your contact info
+      %p 
+        Share it with others 
+        in 1-click 
     .step
       .number
         3
       %p 
-        Share it with others 
-        in 1-click
+        It's that simple
+        
 
   .login-container
     = link_to image_tag( 'login-facebook-btn.png', :class => 'fb-login'), "/auth/facebook"

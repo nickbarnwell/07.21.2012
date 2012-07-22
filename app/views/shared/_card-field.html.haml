@@ -1,15 +1,13 @@
-%li
+%li.card-field{'data-id' => field.id}
   = image_tag field.icon, :class => 'field-icon'
   %span.field-text
     - if field.field_type =~ /mail-*/
       =  link_to field.value, "mailto:#{field.value}"
-    - elsif field_type =~ /tel-*/
-      =  link_to field.value, "tel:#{field.value}"
-
+    - elsif field.field_type =~ /tel-*/
+      =  link_to number_to_phone(field.value), "tel:#{field.value}"
     - case field.field_type
     - when 'twitter'
-      = link_to field.value, "http://twitter.com/#{value}"
+      = link_to field.value, "http://twitter.com/#{field.value}"
     - when 'facebook'
-      = link_to field.user.name, "field.user.raw['link']" 
+      = link_to field.user.name, "#{field.user.raw['link']}" 
     / end
-

@@ -27,6 +27,7 @@
 }
 
 .presser > div{
+	@length: 2s;
 	background-color: rgb(0, 85, 142);
 	width: 2px;
 	height: 2px;
@@ -37,9 +38,9 @@
 	margin-left: -6px;
 	margin-top: -6px;
 	transition: all 1s ease-in;
-	-webkit-transition: all 1s ease-in;
-	-moz-transition: all 1s ease-in;
-	-o-transition: all 1s ease-in;
+	-webkit-transition: all @length ease-in;
+	-moz-transition: all @length ease-in;
+	-o-transition: all @length ease-in;
 }
 
 .presser.active > div{

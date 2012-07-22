@@ -42,7 +42,7 @@ class ShareField < ActiveRecord::Base
       when 'tel-mobile'
        return 'Mobile Phone'
       when 'tel-work'
-        return'Work Phone'
+        return'Landline'
       when 'tel-home'
         return'Home Phone'
       when 'twitter'

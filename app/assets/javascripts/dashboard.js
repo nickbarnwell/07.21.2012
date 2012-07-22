@@ -1,11 +1,14 @@
 var Dashboard = {
 	loadResults: function(users){
-		if(users){
+		console.log(users)
+		if(users != [] && users != null){
 			$.each(users, function(i,user){
-				$(".results").append(Card.build(user));
+				if(user != null) {
+					$(".results").append(Card.build(user).fadeIn(1000));
+				}
 			});
 		}
-		$(".main").show();
+		$(".main").hide();
 		$(".results").show();
 	},
 	geoFailed: function(){
@@ -18,7 +21,7 @@ var Dashboard = {
 		Geo.getLocation(Dashboard.submitGeo, Dashboard.geoFailed)
 	},
 	onPressFinish: function(){
-		$.getJSON('/hump', Dashboard.loadResults);
+		$.getJSON('/hump', Dashboard.loadResults)
 	},
 	initWithGeo: function(){
 		Dashboard.presser = 
@@ -32,5 +35,8 @@ var Dashboard = {
 	},
 	init: function(){
 		Geo.getLocation(Dashboard.initWithGeo, Dashboard.initNoGeo)	
+		$('.edit').on('click', function(evt) {
+			window.location = '/profile/edit'
+		})
 	}
 }
