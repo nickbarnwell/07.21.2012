@@ -1,4 +1,5 @@
 #profile
+
   =render :partial => 'shared/card', :locals => {user: current_user}
 
   .row.span12
@@ -34,3 +35,6 @@
       %br
       #add-field-submit.btn.btn-large.btn-success
         Add Field
+
+  .autocenter{'style'=>'width:330px;text-align:center;clear:both;padding-top:10px;'}
+    = link_to 'Back', '/dashboard', {:class=>'btn', :style=>'width:280px;'}
