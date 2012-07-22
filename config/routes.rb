@@ -8,6 +8,8 @@ Browserbump::Application.routes.draw do
   match "/login/fake" => 'sessions#fake_create'
   match "/dev/presser" => "landing#test"
 
+  resource :profile, :controller => 'profile'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

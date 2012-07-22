@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
 
   serialize :raw, Hash
 
+  has_many :share_fields
+  alias :fields :share_fields
+  alias :fields= :share_fields=
+
   def name
     "#{first_name} #{last_name}"
   end
@@ -39,9 +43,18 @@ class User < ActiveRecord::Base
     token_expiration.nil? || token_expiration < 5.days.from_now
   end
 
+  def add_field(type, value)
+    ShareField.create! do |field|
+      field.type = type
+      field.value = value
+      field.share = true
+      field.user = self
+    end
+  end
+
   class << self
     def create_with_omniauth(auth)
-      create! do |user|
+      user = create! do |user|
         user.provider = auth["provider"]
         user.uid = auth["uid"]
         user.name = auth["info"]["name"]
@@ -50,10 +63,9 @@ class User < ActiveRecord::Base
         user.raw = auth["extra"]["raw_info"]
         user.access_token = auth["credentials"]["token"]
         user.token_expiration = auth["credentials"]["expires_at"]
-       
-        begin
-          user.email = auth["info"]["email"]
-        end
+      end
+      begin
+        user.add_field 'mail-work', auth["info"]["email"]
       end
     end
   end
