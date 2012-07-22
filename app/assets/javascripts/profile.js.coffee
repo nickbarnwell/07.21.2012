@@ -13,7 +13,7 @@ $(document).ready ->
   $('#add-field').on('click', (evt) ->
 
     toggle_matte()
-    toggle_add_field()
+    $("#add-field-form").modal()
 
     return
   )
