@@ -2,18 +2,16 @@ toggle_add_field = ->
 
 
 $(document).ready ->
-  toggle_matte = ->
-    $('#matte').toggle('fast')
-    return
-
-  toggle_add_field = ->
-    $('#add-field-form').toggle('fast');
-    return
-
   $('#add-field').on('click', (evt) ->
-
-    toggle_matte()
     $("#add-field-form").modal()
-
     return
   )
+
+  $("#add-field-submit").on("click", (evt) ->
+    field_type = $('#add-field-type').val()
+    field_value = $('#add-field-value').val()
+    console.log(field_value, field_type)
+
+    
+    return
+   )
