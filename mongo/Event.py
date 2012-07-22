@@ -36,6 +36,6 @@ class Event(Document):
               'timestamp' : { '$lt' : e.timestamp + c.TIME_DIFF_THRESHOLD }
             } 
       ).limit(c.MAX_GROUP_SIZE).all()
-      print [e.user_id for e in nearby]
-      return json.dumps([e.user_id for e in nearby])
+      return json.dumps([e.user_id for e in nearby], ensure_ascii=True).decode('ascii')
+    return json.dumps([])
     #maybe cluster / remove outliers here later
