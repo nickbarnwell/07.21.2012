@@ -43,5 +43,15 @@ var Dashboard = {
 			$('.main').fadeIn(500);
 			$('.results .bump-result').remove();
 		})
+
+		$('.save-contacts').live('click', function(evt) {
+			evt.preventDefault();
+			var link = $(this)
+			var uid = $(this).attr('data-id')
+			$.post('/share', {user_id: uid}, function(res) {
+				link.text('Saved to Contacts!')
+			})
+			return false;
+		})
 	}
 }
