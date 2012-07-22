@@ -1,5 +1,4 @@
 class BumpController < ApplicationController
-  skip_before_filter :login_required
 
   def index
   end
@@ -13,15 +12,15 @@ class BumpController < ApplicationController
       uid: intrange(0,12313).to_s
     }.to_json
     puts dict
-    puts %x[python mongo/save_event.py '#{dict}']
+    
     #render :json => dict
-    render :status => 200, :text=>nil
+    render :status => 200, :json=>%x[python mongo/save_event.py '#{dict}']
   end
 
   def fake_get
     uid = params[:uid]
-    puts %x[python mongo/get_group.py '#{uid}']
-    render :status => 200, :text=>nil
+    
+    render :status => 200, :text=>%x[python mongo/get_group.py '#{uid}']
   end
 
 
