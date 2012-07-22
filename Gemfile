@@ -18,6 +18,10 @@ group :test do
   gem 'factory_girl_rails', '~> 3.3.0'
 end
 
+group :development do
+  gem 'yaml_db'
+end
+
 group :production do
   gem 'thin'
 end

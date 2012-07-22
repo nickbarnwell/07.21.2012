@@ -1,0 +1,280 @@
+
+---
+sessions:
+  columns:
+  - id
+  - session_id
+  - data
+  - created_at
+  - updated_at
+  records: 
+  - - '1'
+    - 0fe20c67d718624f54314fa16beb5f0c
+    - ! 'BAh7BkkiDHVzZXJfaWQGOgZFRmkG
+
+'
+    - '2012-05-14 06:05:29.616663'
+    - '2012-05-14 06:05:32.935049'
+  - - '2'
+    - f7c68c9be8112111d203b40c5bd46ac8
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFLZ0FvUEVXa3RtS010ZHlQSTBS
+
+      QkpNOTFVMWpqcmU3SFRoZDJyYzJWMnBjPQY7AEY=
+
+'
+    - '2012-05-14 06:56:19.895775'
+    - '2012-05-14 06:56:19.895775'
+  - - '3'
+    - 1a56229af4f971943aa80352cc5a2b4c
+    - ! 'BAh7B0kiEF9jc3JmX3Rva2VuBjoGRUZJIjFqKzNlUk92dFJyOHV3R0pZdVRY
+
+      N3NTOVg0NWdtcEt6WFZhd1h1TUNjNzY4PQY7AEZJIgpmbGFzaAY7AEZvOiVB
+
+      Y3Rpb25EaXNwYXRjaDo6Rmxhc2g6OkZsYXNoSGFzaAk6CkB1c2VkbzoIU2V0
+
+      BjoKQGhhc2h7BjoLbm90aWNlVDoMQGNsb3NlZEY6DUBmbGFzaGVzewY7Ckki
+
+      AYE8cD5UaGFuayB5b3UgZm9yIHlvdXIgaW50ZXJlc3QuPC9wPgo8cD5XZSBo
+
+      YXZlIHNlbnQgeW91IGFuIGVtYWlsIHRvIGNvbmZpcm0geW91ciBzdWJzY3Jp
+
+      cHRpb24gdG8gb3VyIHByZWxhdW5jaCBtYWlsaW5nIGxpc3QuPC9wPgoGOwBG
+
+      OglAbm93MA==
+
+'
+    - '2012-05-14 07:15:43.358907'
+    - '2012-05-14 09:01:00.768185'
+  - - '4'
+    - c6c9b35ac173205e52ec497c451885a3
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjF3aXYyenVZTWR3cWU2N05zRnVv
+
+      TUs5anJTNHpvZk8xdHUwN3VteFFWb2VjPQY7AEY=
+
+'
+    - '2012-05-14 19:18:16.351068'
+    - '2012-05-14 19:18:16.351068'
+  - - '5'
+    - aeb5953c548867dc5dd1a016de64b28b
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjF4WTJYK05lVzFOSm1xY2pGUHor
+
+      SkNDdHV4SFJKMjRkd0I1TE1uK0FQV04wPQY7AEY=
+
+'
+    - '2012-05-14 22:08:22.907303'
+    - '2012-05-14 22:08:22.907303'
+  - - '6'
+    - 48ec5c416c00a25ff9e99b012f2d02ab
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFkU0xRa1ZJTXdBTGVSdnN3RU51
+
+      REJ2YkFkWlRqTW9raHMrbzFGY3FSM0k4PQY7AEY=
+
+'
+    - '2012-05-14 22:08:29.533003'
+    - '2012-05-14 22:08:29.533003'
+  - - '7'
+    - a4d1598b043399f421b62974ed165595
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFxYW5Wb1E5WHY3ZEFuZWc2dWl3
+
+      YnhuKzVLUzltUWpSbVc5MUwvVm9EeXRVPQY7AEY=
+
+'
+    - '2012-05-14 22:41:55.751351'
+    - '2012-05-14 22:41:55.751351'
+  - - '8'
+    - 343f31f45fd5dc9b52559b7c51c13e52
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFwd1BSd284RlBSUUlOTXR3MUtp
+
+      ZHBPODZzelNYN29YUFlTdU0rbHgwYWlNPQY7AEY=
+
+'
+    - '2012-05-14 22:41:55.810768'
+    - '2012-05-14 22:41:55.810768'
+  - - '9'
+    - 97398b3cdae0de4841c7a8e02bb44d31
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjF4cU80S0JKWE5KWDBiZWhBNSt3
+
+      MVlxZ2syQ0pFZUFNakxNd3NMSW9mbmU4PQY7AEY=
+
+'
+    - '2012-05-14 22:41:55.818504'
+    - '2012-05-14 22:41:55.818504'
+  - - '10'
+    - acd9cab2ecf76fe5d678c6989c6622e7
+    - ! 'BAh7CUkiDnJldHVybl90bwY6BkVGSSIjaHR0cDovL2xvY2FsaG9zdDozMDAw
+
+      L3dlaWdoaW5zBjsARkkiFG9tbmlhdXRoLnBhcmFtcwY7AEZ7AEkiFG9tbmlh
+
+      dXRoLm9yaWdpbgY7AEYiIGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC9sb2dpbkki
+
+      DHVzZXJfaWQGOwBGaQY=
+
+'
+    - '2012-05-16 07:22:04.086785'
+    - '2012-05-16 08:00:40.238954'
+  - - '12'
+    - 4aaed7dbe2a70598497430ca5653d1ea
+    - ! 'BAh7B0kiDnJldHVybl90bwY6BkVGSSIjaHR0cDovL2xvY2FsaG9zdDozMDAw
+
+      L3dlaWdoaW5zBjsARkkiDHVzZXJfaWQGOwBGaQY=
+
+'
+    - '2012-05-18 05:11:54.814075'
+    - '2012-05-18 05:11:57.529421'
+  - - '16'
+    - 7734c82b1b1e89966459a11876f5caf9
+    - ! 'BAh7CkkiDnJldHVybl90bwY6BkVGSSIkaHR0cDovL2xvY2FsaG9zdDozMDAw
+
+      L2Rhc2hib2FyZAY7AEZJIhRvbW5pYXV0aC5wYXJhbXMGOwBGewBJIhRvbW5p
+
+      YXV0aC5vcmlnaW4GOwBGIiBodHRwOi8vbG9jYWxob3N0OjMwMDAvbG9naW5J
+
+      IhBfY3NyZl90b2tlbgY7AEZJIjFIY1cvYjVFT2lKeWpwK21WaEVMd1ErdkRi
+
+      UWZubGN0WGVtYjVaYWFnSDU0PQY7AEZJIgx1c2VyX2lkBjsARmkG
+
+'
+    - '2012-05-18 07:28:38.046905'
+    - '2012-05-30 23:40:52.251779'
+  - - '17'
+    - 56b753aace0ce7d520a73d039a779ff3
+    - ! 'BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjFoV1UzRXdBK3lkcVNoaEFrYUpx
+
+      SkdCd0lzWjF4OEpBY1kxaWJJdGxVUjE0PQY7AEZJIg5yZXR1cm5fdG8GOwBG
+
+      SSIjaHR0cDovL2xvY2FsaG9zdDozMDAwL3dlaWdoaW5zBjsARkkiDHVzZXJf
+
+      aWQGOwBGaQY=
+
+'
+    - '2012-05-27 19:46:04.460401'
+    - '2012-05-28 06:04:33.370479'
+  - - '18'
+    - 1381ddd2df0130eab967fe588631fcb2
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFLZm5zbi9Fd28rN0JSSmdBK0o1
+
+      dGJzQ1dod1F1dnFyb3lHMTMza205NDhnPQY7AEY=
+
+'
+    - '2012-05-27 20:28:21.260366'
+    - '2012-05-27 20:28:21.260366'
+  - - '19'
+    - a8ce1089b4ae48e4bbf988d391f2103e
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFhdUpYcHprbEtoQ1dhemlFRWNo
+
+      d0FMV1pldTZuN1YwVWQwTnRVQU5zMDFZPQY7AEY=
+
+'
+    - '2012-05-27 20:29:37.292648'
+    - '2012-05-27 20:29:37.292648'
+  - - '20'
+    - f8078b8c0650a0ffec67d387a599813b
+    - ! 'BAh7B0kiEF9jc3JmX3Rva2VuBjoGRUZJIjFJNit5RkNzTjdlTXk1UmpITjJZ
+
+      cTRaUGNxd1dtN0JBbVFNNmNqMEMzQXE0PQY7AEZJIgx1c2VyX2lkBjsARmkG
+
+'
+    - '2012-05-30 21:19:08.472785'
+    - '2012-05-30 21:19:57.911659'
+  - - '21'
+    - de37e834ad068a5b20c24b3328563875
+    - ! 'BAh7CEkiEF9jc3JmX3Rva2VuBjoGRUZJIjFUQmxqNndLR0ZocktMSXY2Qjhv
+
+      ZjgwamdnOEh5U3lBZ1dBSE9GdXhuTk9RPQY7AEZJIg5yZXR1cm5fdG8GOwBG
+
+      SSIkaHR0cDovL2xvY2FsaG9zdDozMDAwL2Rhc2hib2FyZAY7AEZJIgx1c2Vy
+
+      X2lkBjsARmkG
+
+'
+    - '2012-06-02 02:42:07.769104'
+    - '2012-06-02 02:42:22.317214'
+  - - '22'
+    - 14699af2d419a80a690b73aa98a017c7
+    - ! 'BAh7BkkiEF9jc3JmX3Rva2VuBjoGRUZJIjFsdG1XTHBpdXlCSGI3bnZvUHFq
+
+      QmMwNU5mM296eERocFdiMUF2SFAwTDRJPQY7AEY=
+
+'
+    - '2012-06-03 02:03:17.055589'
+    - '2012-06-03 02:03:17.055589'
+  - - '23'
+    - 3884806f9aca4910966fadd92c6c24e4
+    - ! 'BAh7CkkiCmZsYXNoBjoGRUZvOiVBY3Rpb25EaXNwYXRjaDo6Rmxhc2g6OkZs
+
+      YXNoSGFzaAk6CkB1c2VkbzoIU2V0BjoKQGhhc2h7ADoMQGNsb3NlZEY6DUBm
+
+      bGFzaGVzewY6C25vdGljZUkiD1NpZ25lZCBpbiEGOwBGOglAbm93MEkiEF9j
+
+      c3JmX3Rva2VuBjsARkkiMTlQTnN0NDdaMUpDMDJpZ21vSE80cGhJeGZKY1Bk
+
+      bTFqYml0ZW9jRTAyOUk9BjsARkkiFG9tbmlhdXRoLnBhcmFtcwY7AEZ7AEki
+
+      FG9tbmlhdXRoLm9yaWdpbgY7AEYiIGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC9s
+
+      b2dpbkkiDHVzZXJfaWQGOwBGaQY=
+
+'
+    - '2012-06-06 18:55:14.548737'
+    - '2012-06-07 19:38:00.665274'
+
+---
+users:
+  columns:
+  - id
+  - provider
+  - uid
+  - name
+  - created_at
+  - updated_at
+  - email
+  - first_name
+  - last_name
+  - raw
+  - access_token
+  - token_expiration
+  records: 
+  - - '1'
+    - facebook
+    - '692938645'
+    - Nick Barnwell
+    - '2012-05-14 06:05:32.061279'
+    - '2012-05-14 06:05:32.061279'
+    - nick@boltoncomputing.com
+    - Nick
+    - Barnwell
+    - ! "---\nid: '692938645'\nname: Nick Barnwell\nfirst_name: Nick\nlast_name: Barnwell\nlink:
+      http://www.facebook.com/nick.barnwell\nusername: nick.barnwell\nhometown:\n
+      \ id: '112227055460168'\n  name: Barnstable, Massachusetts\nlocation:\n  id:
+      '110843418940484'\n  name: Seattle, Washington\nwork:\n- employer:\n    id:
+      '113723978640016'\n    name: Estately\n  position:\n    id: '106134736085305'\n
+      \   name: Software Developer\n  start_date: 2011-09\n- employer:\n    id: '145039628855571'\n
+      \   name: BoltonComputing\n  location:\n    id: '105634706136203'\n    name:
+      Bolton, Massachusetts\n  start_date: 2007-03\n  end_date: 0000-00\n- employer:\n
+      \   id: '104958162837'\n    name: Google\n  location:\n    id: '108212625870265'\n
+      \   name: Mountain View, California\n  position:\n    id: '149458478397750'\n
+      \   name: Software Engineer Intern\n  start_date: 2012-06\n  end_date: 2012-09\n-
+      employer:\n    id: '126522244070272'\n    name: Podio\n  location:\n    id:
+      '110343502319180'\n    name: Copenhagen, Denmark\n  position:\n    id: '108703555821060'\n
+      \   name: Intern\n  start_date: 2011-02\n  end_date: 2011-07\n- employer:\n
+      \   id: '134749319911289'\n    name: Aptium LLC\n  location:\n    id: '109396742420001'\n
+      \   name: Osterville, Massachusetts\n  position:\n    id: '108703555821060'\n
+      \   name: Intern\n  start_date: 2010-06\n  end_date: 2010-08\neducation:\n-
+      school:\n    id: '102067839834617'\n    name: Copenhagen International School\n
+      \ year:\n    id: '144044875610606'\n    name: '2011'\n  type: High School\n
+      \ classes:\n  - id: '201931703157016'\n    name: IB German Ab Initio SL\n  -
+      id: '163693007013357'\n    name: IB English SL\n  - id: '148278311919568'\n
+      \   name: IB Euro History HL\n  - id: '188742787826535'\n    name: IB Computer
+      Science HL\n    with:\n    - id: '556963260'\n      name: John Balout\n  - id:
+      '193026427388547'\n    name: IB Maths HL\n    with:\n    - id: '1035789029'\n
+      \     name: Paul Herlyn\n    from:\n      id: '1035789029'\n      name: Paul
+      Herlyn\n  - id: '182053968499774'\n    name: IB Physics HL\n    with:\n    -
+      id: '1035789029'\n      name: Paul Herlyn\n    from:\n      id: '1035789029'\n
+      \     name: Paul Herlyn\n- school:\n    id: '112221902122884'\n    name: Nashoba
+      Regional High School\n  year:\n    id: '144044875610606'\n    name: '2011'\n
+      \ type: High School\n- school:\n    id: '8829726273'\n    name: University of
+      Washington\n  year:\n    id: '105576766163075'\n    name: '2015'\n  type: College\ngender:
+      male\nemail: nick@boltoncomputing.com\ntimezone: -7\nlocale: en_US\nverified:
+      true\nupdated_time: '2012-04-03T01:22:27+0000'\n"
+    - AAAFzSWhFBgUBAAVcIX9VdjpmFug0VHsfwxzZBFBzTSzJMKEBvIpyUYtdKZCRB3R43fhCwtjIh1LeS6sfcfTzSQZBYOE2bFTTVdZCSV0hzgZDZD
+    - '2012-07-13 06:05:30'
