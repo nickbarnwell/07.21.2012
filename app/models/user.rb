@@ -67,6 +67,7 @@ class User < ActiveRecord::Base
       begin
         user.add_field 'mail-work', auth["info"]["email"]
       end
+      user
     end
   end
 
