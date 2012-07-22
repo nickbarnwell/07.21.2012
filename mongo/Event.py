@@ -1,5 +1,8 @@
 from mongoengine import *
 import common as c
+from datetime import datetime
+import time
+
 
 class Event(Document):
 
@@ -10,26 +13,27 @@ class Event(Document):
 
   user_id = StringField(required = True) #maybe replace _id later
   loc = GeoPointField(required = True) #[lat, lon]
-  ts = IntField(required = True) #timestamp
+  time = DateTimeField(required = True) #from timestamp
+  timestamp = IntField(required = True)
 
   @staticmethod
   def add(user_id, lat, lon, timestamp):
-    existing_event = Event.objects(user_id = user_id)
+    existing_event = Event.objects(user_id = user_id).first()
     if existing_event is not None:
       existing_event.delete()
-    event = Event(user_id = user_id, loc = [lat, lon], ts = timestamp)
-    print event.loc
+    dt = datetime.fromtimestamp(timestamp)
+    event = Event(user_id = user_id, loc = [lat, lon], timestamp = timestamp, time = dt)
+    print event.time
     event.save()
 
   @staticmethod
   def get_group(user_id):
-    event = Event.objects(user_id = user_id).first()
-    if event:
-      print "in branch"
+    e = Event.objects(user_id = user_id).first()
+    if e:
       nearby = Event.objects( 
-        __raw__ = { 'loc' : { '$within' : {"$center" : [event.loc, c.RADIUS_THRESHOLD]} },
-              'ts' : { '$gt' : (event.ts - c.TIME_DIFF_THRESHOLD) },
-              'ts' : { '$lt' : (event.ts + c.TIME_DIFF_THRESHOLD) }
+        __raw__ = { 'loc' : { '$within' : {"$center" : [e.loc, c.RADIUS_THRESHOLD]} },
+              'timestamp' : { '$gt' : e.timestamp - c.TIME_DIFF_THRESHOLD },
+              'timestamp' : { '$lt' : e.timestamp + c.TIME_DIFF_THRESHOLD }
             } 
       ).limit(c.MAX_GROUP_SIZE).all()
       print [e.user_id for e in nearby]
