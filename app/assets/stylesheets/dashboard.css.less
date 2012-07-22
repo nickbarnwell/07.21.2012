@@ -17,6 +17,43 @@
   .block {
     padding: 15px;
   }
+
+  .edit {
+    background: lighten(blue, 20%);
+    .bg {
+      height: 30px;
+      width: 30px;
+      background-image: url('pencil.svg');
+      background-size: 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      -webkit-transform:scaleX(-1);
+      -moz-transform:scaleX(-1);
+      -ms-transform:scaleX(-1);
+      -o-transform:scaleX(-1);
+      transform:scaleX(-1);
+    }
+
+
+    height: 30px;
+    width: 30px;
+    content: ' ';
+    position: relative;
+    top: -8px;
+    right: 10px;
+    float: right;
+
+    .editskew {
+      position: relative;
+      border-left: 8px solid transparent;
+      border-bottom: 8px solid black;
+
+      float:left;
+      left: -8px;
+      content: ' ';
+
+    }
+  }
   
   .top {
     .block;
