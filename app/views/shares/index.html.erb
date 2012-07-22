@@ -1,0 +1,14 @@
+<div id="shares">
+  <div class="results">
+    <h2 class="centered">People You've Met</h2>
+    <% @shares.each do |sharer| %>
+    <%= render partial: 'shared/card', locals:{user: sharer} %>
+    <% end %>
+  </div>
+
+</div>
+<input type="hidden" id="asset-path" value="">
+
+<script type="text/javascript">
+
+</script>

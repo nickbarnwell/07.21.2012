@@ -49,7 +49,8 @@ var Dashboard = {
 			var link = $(this)
 			var uid = $(this).attr('data-id')
 			$.post('/share', {user_id: uid}, function(res) {
-				link.text('Saved to Contacts!')
+				link.remove()
+				alert('Saved to contacts')
 			})
 			return false;
 		})
