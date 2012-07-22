@@ -11,7 +11,7 @@
       - current_user.fields.unshared.each do |field|
         = render :partial => 'shared/card-field', locals: {field: field}
 
-#add-field-form.autocenter.curl.page-curl.hidden
+#add-field-form.autocenter.curl.page-curl{style: 'display: none;'}
   %label{for: :thing}
     Type
   %select{id: 'add-field-type'}
