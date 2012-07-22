@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120722020107) do
+ActiveRecord::Schema.define(:version => 20120722181853) do
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(:version => 20120722020107) do
     t.string  "field_type"
     t.boolean "share"
     t.integer "user_id"
+  end
+
+  create_table "shares", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "sharer_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -11,6 +11,8 @@ Browserbump::Application.routes.draw do
   match "/login/fake" => 'sessions#fake_create'
   match "/dev/presser" => "landing#test"
   delete 'field/:id' => 'profile#delete_field', as: 'delete_field'
+  post 'share/' => 'shares#save', as: 'create_share'
+  delete 'share/:id' => 'shares#destroy'
   post 'field' => 'profile#add_field', as: 'add_field'
   resource :profile, :controller => 'profile' do
     
