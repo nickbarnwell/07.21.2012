@@ -20,6 +20,13 @@
    color: @title!important;
  }
 
+ h1{
+   font-family: 'Lobster', sans-serif !important;
+   font-size:3em !important;
+   color: @title!important;
+   text-shadow: 2px 2px 1px @titleShadow;
+ }
+
 .autocenter {
   margin: 0 auto;
 }
