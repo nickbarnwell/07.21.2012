@@ -31,10 +31,13 @@ class Event(Document):
     e = Event.objects(user_id = user_id).first()
     if e:
       nearby = Event.objects( 
-        __raw__ = { 'loc' : { '$within' : {"$center" : [e.loc, c.RADIUS_THRESHOLD]} },
-              'timestamp' : { '$gt' : e.timestamp - c.TIME_DIFF_THRESHOLD, '$lt' : e.timestamp + c.TIME_DIFF_THRESHOLD }
-            } 
+        __raw__ =  { 'loc' : { '$within' : 
+                                {"$center" : [e.loc, c.RADIUS_THRESHOLD]}
+                              }
+                  } 
       ).limit(c.MAX_GROUP_SIZE).all()
+      in_time_range = lambda e2 : abs(e.timestamp - e2.timestamp) < c.TIME_DIFF_THRESHOLD
+      nearby = filter(in_time_range, nearby)
       return json.dumps([e.user_id for e in nearby], ensure_ascii=True).decode('ascii')
     return json.dumps([]).decode('ascii')
 

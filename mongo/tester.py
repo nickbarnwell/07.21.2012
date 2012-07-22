@@ -75,9 +75,9 @@ class MainTest(unittest.TestCase):
 		# two of them are out of range for grouping
 		self.assertEqual(len(group), len(test_events) - 2)
 		
-		cluster = json.loads(Event.get_cluster(e1['uid']))
-		# one more for clustering
-		self.assertEqual(len(cluster), len(test_events) - 3)
+		# cluster = json.loads(Event.get_cluster(e1['uid']))
+		# # one more for clustering
+		# self.assertEqual(len(cluster), len(test_events) - 3)
 
 
 if __name__ == '__main__':
