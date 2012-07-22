@@ -32,8 +32,7 @@ class Event(Document):
     if e:
       nearby = Event.objects( 
         __raw__ = { 'loc' : { '$within' : {"$center" : [e.loc, c.RADIUS_THRESHOLD]} },
-              'timestamp' : { '$gt' : e.timestamp - c.TIME_DIFF_THRESHOLD },
-              'timestamp' : { '$lt' : e.timestamp + c.TIME_DIFF_THRESHOLD }
+              'timestamp' : { '$gt' : e.timestamp - c.TIME_DIFF_THRESHOLD, '$lt' : e.timestamp + c.TIME_DIFF_THRESHOLD }
             } 
       ).limit(c.MAX_GROUP_SIZE).all()
       return json.dumps([e.user_id for e in nearby], ensure_ascii=True).decode('ascii')

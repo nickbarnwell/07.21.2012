@@ -7,8 +7,10 @@ class BumpController < ApplicationController
     end
 
     dict.merge!({uid: current_user.uid})
-    dict[:timestamp] = dict[:timestamp]/1000
+    dict[:timestamp] = DateTime.now.utc.to_i
 
+    
+    p dict
     resp = %x[python mongo/save_event.py '#{dict.to_json}']
 
     render :status => 200, :nothing => true

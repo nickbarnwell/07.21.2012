@@ -5,6 +5,7 @@ var Geo = {
 		return;
 	},
 	extract: function(location){
+		
 	  return {
 	    timestamp: location.timestamp,
 	    lat: location.coords.latitude,
