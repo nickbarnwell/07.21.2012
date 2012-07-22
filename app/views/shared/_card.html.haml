@@ -11,9 +11,9 @@
       %h1
         =user.last_name
   .bottom.shadow-bottom
-    %ul.info-fields
+    %ul.fields
       - user.fields.each do |field|
         %li
           = image_tag field.icon, :class => 'field-icon'
           %span.field-text
-            = field.value
+            = field.link_value.html_safe
