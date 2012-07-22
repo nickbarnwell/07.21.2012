@@ -1,19 +1,24 @@
 var Dashboard = {
-	loadResults: function(){
-		
+	loadResults: function(users){
+		if(users){
+			$.each(users, function(i,user){
+				$(".results").append(Card.build(user));
+			});
+		}
+		$(".main").show();
+		$(".results").show();
 	},
 	geoFailed: function(){
 		alert("retrieving second geo failed");
 	},
 	submitGeo: function(location){
-		console.log(Geo.extract(location));
-		$.post('/asdfasdfasdf.php', Geo.extract(location));
+		$.post('/bump', Geo.extract(location));
 	},
 	onPressStart: function(){
 		Geo.getLocation(Dashboard.submitGeo, Dashboard.geoFailed)
 	},
 	onPressFinish: function(){
-		$.get('/loading.php', Dashboard.loadResults);
+		$.getJSON('/hump', Dashboard.loadResults);
 	},
 	initWithGeo: function(){
 		Dashboard.presser = 

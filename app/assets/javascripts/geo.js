@@ -1,7 +1,7 @@
 var Geo = {
 	getLocation: function(success, error){
 		navigator.geolocation.getCurrentPosition(success, error, 
-			{enableHighAccuracy: true, timeout: 3000, maximumAge: 6*(10^4)});
+			{enableHighAccuracy: true, timeout: 10000, maximumAge: 6*(10^4)});
 		return;
 	},
 	extract: function(location){
