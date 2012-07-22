@@ -1,9 +1,9 @@
 <div id="dashboard">
 	<div class="loading">
-		<h3>Tracking Your Location...</h3>
+		<h3>Waiting for Location</h3>
 	</div>
 	<div class="nogeo">
-		<h3>Blasphemy. You're no fun.</h3>
+		<h3>Unfortunately, we couldn't determine your location. <br/> Please make sure you have Location Services enabled and try again</h3>
 	</div>
 	<div class="main">
 		<%= render :partial => 'shared/card', :locals => {user: @user} %>
