@@ -5,25 +5,30 @@ class BumpController < ApplicationController
       hash[key] = params[key].to_f
       hash
     end
-    puts current_user.uid
-    dict.merge!({uid: current_user.uid})
-    dict[:timestamp] = dict[:timestamp]/1000
 
+    dict.merge!({uid: current_user.uid})
+    dict[:timestamp] = DateTime.now.utc.to_i
+
+    
+    p dict
     resp = %x[python mongo/save_event.py '#{dict.to_json}']
 
     render :status => 200, :nothing => true
   end
 
+  def field_render
+    field = ShareField.find(params[:id])
+    render :partial => 'shared/card-field', locals:{field: field}
+  end
+
   def hump
     uid = current_user.uid
     ids = %x[python mongo/get_group.py '#{uid}']
-    p ids
-    array = JSON.parse(ids).map do |id|
-      unless id == uid
-        User.find_by_uid(id)
-      end
-    end.to_json
-    render :json=> array
+    ids = JSON.parse(ids) - [uid]
+    array = ids.map do |id|
+      User.find_by_uid(id)
+    end
+    render :json=> array.to_json(include: :share_fields)
   end
 
   def fake

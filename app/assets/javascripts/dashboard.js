@@ -1,12 +1,14 @@
 var Dashboard = {
 	loadResults: function(users){
 		console.log(users)
-		if(users != null){
+		if(users != [] && users != null){
 			$.each(users, function(i,user){
-				$(".results").append(Card.build(user));
+				if(user != null) {
+					$(".results").append(Card.build(user).fadeIn(1000));
+				}
 			});
 		}
-		$(".main").show();
+		$(".main").hide();
 		$(".results").show();
 	},
 	geoFailed: function(){
