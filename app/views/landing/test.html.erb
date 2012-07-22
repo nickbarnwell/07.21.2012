@@ -7,10 +7,13 @@
 	var pressing = false;
 	var transitionPropCt = 4; //How many css props are transitioning?
 	var transitionCt = 0; //This gets incremented
-	$(".presser").mousedown(function(){
+	$(".presser").mousedown(function(e){
+		e.preventDefault();
 		pressing = true;
+		$(this).addClass("active");
 	}).mouseup(function(){
 		pressing = false;
+		$(this).removeClass("active");
 	}).bind('webkitTransitionEnd', function(){
 		transitionCt++;
 		if((transitionCt%transitionPropCt)==1){
