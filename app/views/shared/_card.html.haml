@@ -13,7 +13,4 @@
   .bottom.shadow-bottom
     %ul.fields
       - user.fields.each do |field|
-        %li
-          = image_tag field.icon, :class => 'field-icon'
-          %span.field-text
-            = field.link_value.html_safe
+        = render :partial => 'shared/card-field', locals: {field: field}
