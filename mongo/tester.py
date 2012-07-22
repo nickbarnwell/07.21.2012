@@ -7,9 +7,7 @@ import unittest
 import time
 import get_group
 import save_event
-from mongoengine import connect
 from Event import Event
-
 
 #test data
 t1 = int(time.time())
@@ -61,7 +59,7 @@ test_events = [e1, e2, e3, e4, e5, e6, e7]
 class MainTest(unittest.TestCase):
 
 	def setUp(self):
-		connect('handsin', host='localhost:27017', auto_start_request = False)
+		c.connect_db()
 		for e in test_events:
 			save_event.main(json.dumps(e))
 	
