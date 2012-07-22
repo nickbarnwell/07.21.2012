@@ -11,6 +11,8 @@ gem 'pg'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'handlebars-rails', git: 'git://github.com/jamesarosen/handlebars-rails.git'
+
 group :test do
   gem 'rspec-rails', '~> 2.10.1'
   gem 'webmock'

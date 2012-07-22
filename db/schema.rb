@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20120722020107) do
 
   create_table "share_fields", :force => true do |t|
     t.string  "value"
-    t.string  "type"
+    t.string  "field_type"
     t.boolean "share"
     t.integer "user_id"
   end
