@@ -3,6 +3,7 @@ import common as c
 from datetime import datetime
 import time
 import json
+import cluster
 
 class Event(Document):
 
@@ -23,7 +24,6 @@ class Event(Document):
       existing_event.delete()
     dt = datetime.fromtimestamp(timestamp)
     event = Event(user_id = user_id, loc = [lat, lon], timestamp = timestamp, time = dt)
-    print event.time
     event.save()
 
   @staticmethod
@@ -36,6 +36,6 @@ class Event(Document):
               'timestamp' : { '$lt' : e.timestamp + c.TIME_DIFF_THRESHOLD }
             } 
       ).limit(c.MAX_GROUP_SIZE).all()
-      print [e.user_id for e in nearby]
-      return json.dumps([e.user_id for e in nearby])
-    #maybe cluster / remove outliers here later
+      group = [ (e.user_id, e.loc) for e in nearby]
+      cl = cluster.get_cluster(group)
+      return json.dumps([uid for (uid, loc) in cl])

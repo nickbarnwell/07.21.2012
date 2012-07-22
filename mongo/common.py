@@ -8,8 +8,9 @@ import os
 TIME_DIFF_THRESHOLD = 10 #seconds utc
 RADIUS_THRESHOLD = 0.05 #1/100 # degrees (approx 1km)
 MAX_GROUP_SIZE = 100
-MIN_SIZE_TO_CLUSTER = 10
+MIN_SIZE_TO_CLUSTER = 6
 MAX_CLUSTERS = 10
+MAX_K_MEANS_ITERATIONS = 10
 
 def connect_db():
 	port = 'localhost:27017'

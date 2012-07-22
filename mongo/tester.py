@@ -71,8 +71,8 @@ class MainTest(unittest.TestCase):
 			except for the duplicate. '''
 		self.assertEqual(MainTest.count_events(), len(test_events))
 		group = json.loads(get_group.main(e1['uid']))
-		#two of them are out of range for grouping
-		self.assertEqual(len(group), len(test_events) - 2)
+		#two of them are out of range for grouping, one for clustering
+		self.assertEqual(len(group), len(test_events) - 3)
 
 
 if __name__ == '__main__':
