@@ -2,7 +2,9 @@ Browserbump::Application.routes.draw do
 
   match "/auth/:provider/callback" => "sessions#create"
   match "/logout" => "sessions#destroy", :as => :logout
-  match "/bump" => "bump#index"  
+  post "/bump" => "bump#bump"  
+  get "/hump/:id" => "bump#hump"
+
   match "/test" => "bump#fake"
   match "/testget" => "bump#fake_get"
   match "/dashboard" => 'dashboard#index', :as => 'dashboard'

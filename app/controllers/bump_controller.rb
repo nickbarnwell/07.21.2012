@@ -1,6 +1,13 @@
 class BumpController < ApplicationController
 
-  def index
+  def bump
+    p params
+    render :status => 200, :json=>%x[python mongo/save_event.py '#{dict}']
+  end
+
+  def hump
+    uid = current_user.uid
+    render :json=>%x[python mongo/get_group.py '#{uid}']
   end
 
   def fake
@@ -13,13 +20,9 @@ class BumpController < ApplicationController
     }.to_json
     puts dict
     
-    #render :json => dict
-    render :status => 200, :json=>%x[python mongo/save_event.py '#{dict}']
   end
 
   def fake_get
-    uid = params[:uid]
-    render :status => 200, :text=>%x[python mongo/get_group.py '#{uid}']
   end
 
 
