@@ -35,5 +35,8 @@ var Dashboard = {
 	},
 	init: function(){
 		Geo.getLocation(Dashboard.initWithGeo, Dashboard.initNoGeo)	
+		$('.edit').on('click', function(evt) {
+			window.location = '/profile/edit'
+		})
 	}
 }
