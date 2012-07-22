@@ -37,7 +37,7 @@ class Event(Document):
             } 
       ).limit(c.MAX_GROUP_SIZE).all()
       return json.dumps([e.user_id for e in nearby], ensure_ascii=True).decode('ascii')
-    return json.dumps([])
+    return json.dumps([]).decode('ascii')
 
     @staticmethod
     def get_cluster(user_id):
