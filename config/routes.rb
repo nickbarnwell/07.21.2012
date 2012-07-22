@@ -4,6 +4,7 @@ Browserbump::Application.routes.draw do
   match "/logout" => "sessions#destroy", :as => :logout
   match "/bump" => "bump#index"  
   match "/test" => "bump#fake"
+  match "/testget" => "bump#fake_get"
   match "/dashboard" => 'dashboard#index', :as => 'dashboard'
   match "/login/fake" => 'sessions#fake_create'
   match "/dev/presser" => "landing#test"
