@@ -64,6 +64,7 @@ class User < ActiveRecord::Base
         user.access_token = auth["credentials"]["token"]
         user.token_expiration = auth["credentials"]["expires_at"]
       end
+      user.add_field 'facebook', user.uid
       begin
         user.add_field 'mail-work', auth["info"]["email"]
       end

@@ -4,10 +4,8 @@ module ShareFieldTypes
     'mail-personal',
     'tel-mobile',
     'tel-work',
-    'tel-home',
     'twitter',
     'facebook',
-    'linkedin'
   ]
 
   def icon
