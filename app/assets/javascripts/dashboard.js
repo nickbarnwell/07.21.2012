@@ -9,7 +9,7 @@ var Dashboard = {
 			});
 		}
 		$(".main").hide();
-		$(".results").show();
+		$(".results").fadeIn(500);
 	},
 	geoFailed: function(){
 		alert("retrieving second geo failed");
@@ -37,6 +37,11 @@ var Dashboard = {
 		Geo.getLocation(Dashboard.initWithGeo, Dashboard.initNoGeo)	
 		$('.edit').on('click', function(evt) {
 			window.location = '/profile/edit'
+		})
+		$('#results-back').on('click', function(evt) {
+			$('.results').hide();
+			$('.main').fadeIn(500);
+			$('.results .bump-result').remove();
 		})
 	}
 }
