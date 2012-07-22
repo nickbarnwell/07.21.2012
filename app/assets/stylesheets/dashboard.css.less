@@ -1,3 +1,81 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Less here: http://lesscss.org/
+
+#card {
+  @card: rgba( 255,255,255 , 100%);
+
+  dl, dd, dt, p, h1, h2 {
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  width: 350px;
+  margin: 0 auto;
+  background: @card;
+
+  .block {
+    padding: 15px;
+  }
+  
+  .top {
+    .block;
+    
+
+    background: darken(@card, 0%);
+
+    .header {
+      display:;
+      position: relative;
+      left: 10px;
+     }
+
+    .photo {
+      position: relative;
+      float: left;
+      top: 0px;
+      left: 0px;
+
+      .profile-photo {
+        @size: 75px;
+        width: @size;
+        height: @size;
+      }
+    }
+
+    border-bottom: 2px solid darken(@card, 20%);
+  }
+
+  .bottom {
+    .block;
+    background: darken(@card, 10%);
+  }
+}
+
+.curl {
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset; 
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset; 
+
+}
+
+.page-curl:before, .page-curl:after {
+  -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  -webkit-transform: skew(-15deg) rotate(-6deg);
+  -moz-transform: skew(-15deg) rotate(-6deg);
+  -ms-transform: skew(-15deg) rotate(-6deg);
+  -o-transform: skew(-15deg) rotate(-6deg);
+  transform: skew(-15deg) rotate(-6deg); 
+}
+
+.page-curl:after {
+  left: auto;
+  right: 10px;
+  -webkit-transform: skew(15deg) rotate(6deg);
+  -moz-transform: skew(15deg) rotate(6deg);
+  -ms-transform: skew(15deg) rotate(6deg);
+  -o-transform: skew(15deg) rotate(6deg);
+  transform: skew(15deg) rotate(6deg); 
+}
