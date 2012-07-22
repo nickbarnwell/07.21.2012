@@ -1,6 +1,6 @@
 class SharesController < ApplicationController
   def save
-    if Share.where(user_id: current_user.id, sharer_id:   params[:user_id]).nil?
+    if Share.where(user_id: current_user.id, sharer_id: params[:user_id]).count() == 0
       share = Share.create! do |s|
         s.user = current_user
         s.sharer = User.find(params[:user_id])

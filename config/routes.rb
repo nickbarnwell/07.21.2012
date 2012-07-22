@@ -12,7 +12,7 @@ Browserbump::Application.routes.draw do
   match "/dev/presser" => "landing#test"
   delete 'field/:id' => 'profile#delete_field', as: 'delete_field'
   get '/shares' => 'shares#index'
-  post '/share/' => 'shares#save', as: 'create_share'
+  post '/share' => 'shares#save', as: 'create_share'
   delete 'share/:id' => 'shares#destroy'
   post 'field' => 'profile#add_field', as: 'add_field'
   resource :profile, :controller => 'profile' do
