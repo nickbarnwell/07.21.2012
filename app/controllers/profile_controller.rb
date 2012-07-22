@@ -4,8 +4,9 @@ class ProfileController < ApplicationController
   end
 
   def add_field
-    current_user.add_field params[:type], params[:value]
-    render :status => 204
+    p params
+    field = current_user.add_field params[:field_type], params[:field_value]
+    render :partial => 'shared/card-field', locals: {field: field}
   end
 
   def disable_field

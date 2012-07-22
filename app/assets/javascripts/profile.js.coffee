@@ -8,10 +8,12 @@ $(document).ready ->
   )
 
   $("#add-field-submit").on("click", (evt) ->
-    field_type = $('#add-field-type').val()
-    field_value = $('#add-field-value').val()
-    console.log(field_value, field_type)
-
+    dict = { field_type: $('#add-field-type').val(), field_value: $('#add-field-value').val()}
     
+    $.post('/field', dict, (res) ->
+      console.log(res)
+      $('#card .fields').append(res)
+    )
+    $("#add-field-form").modal('hide')
     return
-   )
+  )
